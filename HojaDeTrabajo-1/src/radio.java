@@ -1,7 +1,6 @@
 
 public interface radio {
 	
-	//Comentario lalalelelililololulu
 	
 	static final int constCambioAM = 10;
 	static final double constCambioFM = 0.2;
