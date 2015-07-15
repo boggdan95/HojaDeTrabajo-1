@@ -3,15 +3,15 @@
  */
 
 /**
- * @author Boggdan Barrientos, Bryan Chan, Pablo Arreola
+ * @author Boggdan Barrientos, Bryan Chan, Pablo Arriola
  *
  */
 public class radioBBP implements radio {
 
 	
 	private int volumenActual = 0;
-	private String emisoraActual = "FM";
-	private double frecuenciaActual = 87.5;
+	private double emisoraActual = 87.5;
+	private String frecuenciaActual = "FM";
 	private boolean estadoActual = false;
 	
 	
@@ -37,7 +37,13 @@ public class radioBBP implements radio {
 	@Override
 	public String cambiarFrecuencia() {
 		// TODO Auto-generated method stub
-		return null;
+		if(frecuenciaActual=="FM"){
+			frecuenciaActual = "AM";
+		} else {
+			frecuenciaActual = "FM";
+		}
+		
+		return frecuenciaActual;
 	}
 
 	/* (non-Javadoc)
@@ -46,13 +52,7 @@ public class radioBBP implements radio {
 	@Override
 	public double cambiarEmisora() {
 		// TODO Auto-generated method stub
-		if(emisoraActual=="FM"){
-			emisoraActual = "AM";
-		} else {
-			emisoraActual = "FM";
-		}
-		
-		return emisoraActual;
+		return 0;
 	}
 
 	/* (non-Javadoc)
@@ -61,7 +61,17 @@ public class radioBBP implements radio {
 	@Override
 	public double adelantarEmisora() {
 		// TODO Auto-generated method stub
-		return 0;
+		if(frecuenciaActual=="FM"){
+			if(emisoraActual!=107.9){
+				emisoraActual = emisoraActual + 0.2;
+			}
+		} else {
+			if(emisoraActual!=1610){
+				emisoraActual = emisoraActual + 10;
+			}
+		}
+		
+		return emisoraActual;
 	}
 
 	/* (non-Javadoc)
@@ -70,7 +80,17 @@ public class radioBBP implements radio {
 	@Override
 	public double retrocederEmisora() {
 		// TODO Auto-generated method stub
-		return 0;
+		if(frecuenciaActual=="FM"){
+			if(emisoraActual!=87.9){
+				emisoraActual = emisoraActual - 0.2;
+			}
+		} else {
+			if(emisoraActual!=530){
+				emisoraActual = emisoraActual - 10;
+			}
+		}
+		
+		return emisoraActual;
 	}
 
 	/* (non-Javadoc)
@@ -88,7 +108,9 @@ public class radioBBP implements radio {
 	@Override
 	public int subirVolumen() {
 		// TODO Auto-generated method stub
-		volumenActual++;
+		if(volumenActual!=100){
+			volumenActual++;
+		}
 		return volumenActual;
 	}
 
@@ -98,7 +120,9 @@ public class radioBBP implements radio {
 	@Override
 	public int bajarVolumen() {
 		// TODO Auto-generated method stub
-		volumenActual--;
+		if(volumenActual!=0){
+			volumenActual--;
+		}
 		return volumenActual;
 	}
 
