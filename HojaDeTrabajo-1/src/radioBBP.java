@@ -9,7 +9,8 @@
 public class radioBBP implements radio {
 
 	
-	public int volumen; 
+	private int volumen;
+	
 	
 	/* (non-Javadoc)
 	 * @see radio#encenderApagar()
