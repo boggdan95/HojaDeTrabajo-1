@@ -9,7 +9,11 @@
 public class radioBBP implements radio {
 
 	
-	private int volumen;
+	private int volumenActual = 0;
+	private String emisoraActual = "FM";
+	private double frecuenciaActual = 87.5;
+	private boolean estadoActual = false;
+	
 	
 	
 	/* (non-Javadoc)
@@ -18,7 +22,13 @@ public class radioBBP implements radio {
 	@Override
 	public boolean encenderApagar() {
 		// TODO Auto-generated method stub
-		return false;
+		if(estadoActual==true){
+			estadoActual = false;
+		} else {
+			estadoActual = true;
+		}
+		
+		return estadoActual;
 	}
 
 	/* (non-Javadoc)
@@ -36,7 +46,13 @@ public class radioBBP implements radio {
 	@Override
 	public double cambiarEmisora() {
 		// TODO Auto-generated method stub
-		return 0;
+		if(emisoraActual=="FM"){
+			emisoraActual = "AM";
+		} else {
+			emisoraActual = "FM";
+		}
+		
+		return emisoraActual;
 	}
 
 	/* (non-Javadoc)
@@ -72,7 +88,8 @@ public class radioBBP implements radio {
 	@Override
 	public int subirVolumen() {
 		// TODO Auto-generated method stub
-		return 0;
+		volumenActual++;
+		return volumenActual;
 	}
 
 	/* (non-Javadoc)
@@ -81,7 +98,8 @@ public class radioBBP implements radio {
 	@Override
 	public int bajarVolumen() {
 		// TODO Auto-generated method stub
-		return 0;
+		volumenActual--;
+		return volumenActual;
 	}
 
 }
