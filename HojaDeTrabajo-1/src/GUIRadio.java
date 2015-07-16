@@ -22,17 +22,11 @@ public class GUIRadio {
 	private JRadioButton rdbtnFm, rdbtnAm;
 	private JButton btnGuardar;
 	private JComboBox<String> comboBox;
-	private JButton btnCanal6, btnCanal5, btnCanal4, btnCanal3, btnCanal1, btnCanal2;
+	private JButton btnCanal6, btnCanal5, btnCanal4, btnCanal3, btnCanal1, btnCanal2, btnCanal7, btnCanal8, btnCanal9, btnCanal10, btnCanal11, btnCanal12;
 	private JLabel lblSintoniza;
 	private JSlider sintonizador;
 	private JButton btnEncendidoapagado;
 	private JSlider manejoVolumen;
-	private JButton btnCanal7;
-	private JButton btnCanal8;
-	private JButton btnCanal9;
-	private Component btnCanal10;
-	private JButton btnCanal11;
-	private JButton btnCanal12;
 
 	/**
 	 * Launch the application.
