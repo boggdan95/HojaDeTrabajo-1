@@ -80,7 +80,7 @@ public class GUIRadio {
 		frame.getContentPane().add(lblEstacin);
 		
 		lblSintoniza = new JLabel("");
-		lblSintoniza.setBounds(276, 47, 171, 33);
+		lblSintoniza.setBounds(183, 47, 171, 33);
 		frame.getContentPane().add(lblSintoniza);
 		
 		JLabel lblVolumen = new JLabel("Volumen:");
@@ -206,9 +206,11 @@ public class GUIRadio {
 
 		public void actionPerformed(ActionEvent evento) {
 			if (btnAvanzar == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.adelantarEmisora()));
 				
 			}
 			if (btnRegresar == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.retrocederEmisora()));
 				
 			}
 			if (btnSubirVolumen == evento.getSource()){
