@@ -13,13 +13,13 @@ public interface radio {
 	
 	public String cambiarFrecuencia ();
 	
-	public double cambiarEmisora ();
+	public double cargarEmisora(int posicion);
 	
 	public double adelantarEmisora();
 	
 	public double retrocederEmisora();
 	
-	public double guardarEmisora();
+	public double guardarEmisora(double emisora, int posicion);
 	
 	public int subirVolumen();
 	
