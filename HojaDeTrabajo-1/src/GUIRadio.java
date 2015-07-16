@@ -29,6 +29,7 @@ public class GUIRadio {
 	private JButton btnAvanzar;
 	private JButton btnSubirVolumen;
 	private JButton btnBajarVolumen;
+	private radioBBP radio;
 
 	/**
 	 * Launch the application.
@@ -50,7 +51,10 @@ public class GUIRadio {
 	 * Create the application.
 	 */
 	public GUIRadio() {
+		radio = new radioBBP();
 		initialize();
+		
+		
 	}
 
 	/**
@@ -201,6 +205,18 @@ public class GUIRadio {
 	public class botones implements ActionListener{
 
 		public void actionPerformed(ActionEvent evento) {
+			if (btnAvanzar == evento.getSource()){
+				
+			}
+			if (btnRegresar == evento.getSource()){
+				
+			}
+			if (btnSubirVolumen == evento.getSource()){
+				
+			}
+			if (btnBajarVolumen == evento.getSource()){
+				
+			}
 			
 			
 		}
