@@ -105,7 +105,7 @@ public class GUIRadio {
 		manejoVolumen.addChangeListener(new slider());
 		
 		btnCanal1 = new JButton("Canal 1");
-		btnCanal1.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnCanal1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnCanal1.setBounds(10, 126, 73, 23);
 		frame.getContentPane().add(btnCanal1);
 		btnCanal1.addActionListener(new botones());
@@ -136,7 +136,7 @@ public class GUIRadio {
 		btnCanal6.addActionListener(new botones());
 		
 		JLabel lblCanales = new JLabel("Canales:");
-		lblCanales.setBounds(26, 221, 46, 14);
+		lblCanales.setBounds(10, 221, 62, 14);
 		frame.getContentPane().add(lblCanales);
 		
 		String[] canales = {"Canal 1","Canal 2","Canal 3","Canal 4","Canal 5","Canal 6","Canal 7","Canal 8","Canal 9","Canal 10","Canal 11","Canal 12",};
@@ -146,7 +146,7 @@ public class GUIRadio {
 		comboBox.addActionListener(new botones());
 		
 		btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(171, 217, 73, 23);
+		btnGuardar.setBounds(183, 217, 85, 23);
 		frame.getContentPane().add(btnGuardar);
 		btnGuardar.addActionListener(new botones());
 		
