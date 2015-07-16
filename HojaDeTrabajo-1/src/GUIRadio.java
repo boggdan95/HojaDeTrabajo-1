@@ -105,7 +105,8 @@ public class GUIRadio {
 		manejoVolumen.addChangeListener(new slider());
 		
 		btnCanal1 = new JButton("Canal 1");
-		btnCanal1.setBounds(10, 126, 69, 23);
+		btnCanal1.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnCanal1.setBounds(10, 126, 73, 23);
 		frame.getContentPane().add(btnCanal1);
 		btnCanal1.addActionListener(new botones());
 		
@@ -163,7 +164,8 @@ public class GUIRadio {
 		frame.getContentPane().add(rdbtnFm);
 		
 		btnCanal7 = new JButton("Canal 7");
-		btnCanal7.setBounds(10, 161, 69, 23);
+		btnCanal7.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnCanal7.setBounds(10, 161, 73, 23);
 		frame.getContentPane().add(btnCanal7);
 		
 		btnCanal8 = new JButton("Canal 8");
