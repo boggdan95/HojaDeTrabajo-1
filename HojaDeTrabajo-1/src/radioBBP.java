@@ -13,6 +13,8 @@ public class radioBBP implements radio {
 	private double emisoraActual = 87.5;
 	private String frecuenciaActual = "FM";
 	private boolean estadoActual = false;
+	private double[] ams = new double[12];
+	private double[] fms = new double[12];
 	
 	
 	
@@ -50,9 +52,13 @@ public class radioBBP implements radio {
 	 * @see radio#cambiarEmisora()
 	 */
 	@Override
-	public double cambiarEmisora() {
+	public double cargarEmisora(int posicion) {
 		// TODO Auto-generated method stub
-		return 0;
+		if(frecuenciaActual=="FM"){
+			return fms[posicion];
+		} else {
+			return ams[posicion];
+		}
 	}
 
 	/* (non-Javadoc)
@@ -97,9 +103,15 @@ public class radioBBP implements radio {
 	 * @see radio#guardarEmisora()
 	 */
 	@Override
-	public double guardarEmisora() {
+	public double guardarEmisora(double emisora, int posicion) {
 		// TODO Auto-generated method stub
-		return 0;
+		if(frecuenciaActual=="FM"){
+			fms[posicion] = emisora;
+		} else {
+			ams[posicion] = emisora;
+		}
+		
+		return emisora;
 	}
 
 	/* (non-Javadoc)
