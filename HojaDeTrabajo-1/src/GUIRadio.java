@@ -25,6 +25,10 @@ public class GUIRadio {
 	private JButton btnCanal6, btnCanal5, btnCanal4, btnCanal3, btnCanal1, btnCanal2, btnCanal7, btnCanal8, btnCanal9, btnCanal10, btnCanal11, btnCanal12;
 	private JLabel lblSintoniza;
 	private JButton btnEncendidoapagado;
+	private JButton btnRegresar;
+	private JButton btnAvanzar;
+	private JButton btnSubirVolumen;
+	private JButton btnBajarVolumen;
 
 	/**
 	 * Launch the application.
@@ -164,20 +168,20 @@ public class GUIRadio {
 		btnCanal12.setBounds(461, 159, 86, 23);
 		frame.getContentPane().add(btnCanal12);
 		
-		JButton btnRegresar = new JButton("<<");
+		btnRegresar = new JButton("<<");
 		btnRegresar.setBounds(136, 80, 89, 23);
 		frame.getContentPane().add(btnRegresar);
 		
-		JButton btnAvanzar = new JButton(">>");
+		btnAvanzar = new JButton(">>");
 		btnAvanzar.setBounds(286, 80, 89, 23);
 		frame.getContentPane().add(btnAvanzar);
 		
-		JButton btnSubirVolumen = new JButton("+");
+		btnSubirVolumen = new JButton("+");
 		btnSubirVolumen.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnSubirVolumen.setBounds(36, 318, 79, 45);
 		frame.getContentPane().add(btnSubirVolumen);
 		
-		JButton btnBajarVolumen = new JButton("-");
+		btnBajarVolumen = new JButton("-");
 		btnBajarVolumen.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnBajarVolumen.setBounds(146, 318, 79, 45);
 		frame.getContentPane().add(btnBajarVolumen);
