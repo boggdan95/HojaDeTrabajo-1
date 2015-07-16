@@ -24,9 +24,7 @@ public class GUIRadio {
 	private JComboBox<String> comboBox;
 	private JButton btnCanal6, btnCanal5, btnCanal4, btnCanal3, btnCanal1, btnCanal2, btnCanal7, btnCanal8, btnCanal9, btnCanal10, btnCanal11, btnCanal12;
 	private JLabel lblSintoniza;
-	private JSlider sintonizador;
 	private JButton btnEncendidoapagado;
-	private JSlider manejoVolumen;
 
 	/**
 	 * Launch the application.
@@ -61,17 +59,6 @@ public class GUIRadio {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		sintonizador = new JSlider();
-		sintonizador.setBounds(10, 81, 537, 33);
-		frame.getContentPane().add(sintonizador);
-		sintonizador.setPaintTrack(true);
-		sintonizador.setMajorTickSpacing(108);
-		sintonizador.setMinorTickSpacing(88);
-		sintonizador.setPaintLabels(true);
-		Hashtable tabla = sintonizador.createStandardLabels(10);
-	    sintonizador.setLabelTable(tabla);
-		sintonizador.addChangeListener(new slider());
-		
 		btnEncendidoapagado = new JButton("Encender/Apagar");
 		btnEncendidoapagado.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnEncendidoapagado.setBounds(196, 13, 162, 23);
@@ -90,13 +77,8 @@ public class GUIRadio {
 		
 		JLabel lblVolumen = new JLabel("Volumen:");
 		lblVolumen.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblVolumen.setBounds(71, 365, 73, 14);
+		lblVolumen.setBounds(95, 279, 73, 14);
 		frame.getContentPane().add(lblVolumen);
-		
-		manejoVolumen = new JSlider();
-		manejoVolumen.setBounds(26, 390, 154, 23);
-		frame.getContentPane().add(manejoVolumen);
-		manejoVolumen.addChangeListener(new slider());
 		
 		btnCanal1 = new JButton("Canal 1");
 		btnCanal1.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -181,15 +163,24 @@ public class GUIRadio {
 		btnCanal12 = new JButton("Canal 12");
 		btnCanal12.setBounds(461, 159, 86, 23);
 		frame.getContentPane().add(btnCanal12);
-	}
-	
-	public class slider implements ChangeListener{
-
-		public void stateChanged(ChangeEvent movimiento) {
-			
-			
-		}
 		
+		JButton btnRegresar = new JButton("<<");
+		btnRegresar.setBounds(136, 80, 89, 23);
+		frame.getContentPane().add(btnRegresar);
+		
+		JButton btnAvanzar = new JButton(">>");
+		btnAvanzar.setBounds(286, 80, 89, 23);
+		frame.getContentPane().add(btnAvanzar);
+		
+		JButton btnSubirVolumen = new JButton("+");
+		btnSubirVolumen.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnSubirVolumen.setBounds(36, 318, 79, 45);
+		frame.getContentPane().add(btnSubirVolumen);
+		
+		JButton btnBajarVolumen = new JButton("-");
+		btnBajarVolumen.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnBajarVolumen.setBounds(146, 318, 79, 45);
+		frame.getContentPane().add(btnBajarVolumen);
 	}
 	
 	public class botones implements ActionListener{
