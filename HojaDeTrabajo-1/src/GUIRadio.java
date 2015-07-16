@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Hashtable;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -30,6 +31,8 @@ public class GUIRadio {
 	private JButton btnSubirVolumen;
 	private JButton btnBajarVolumen;
 	private radioBBP radio;
+	private JLabel lblVolumen;
+	private ButtonGroup amfm;
 
 	/**
 	 * Launch the application.
@@ -83,7 +86,7 @@ public class GUIRadio {
 		lblSintoniza.setBounds(183, 47, 171, 33);
 		frame.getContentPane().add(lblSintoniza);
 		
-		JLabel lblVolumen = new JLabel("Volumen:");
+		lblVolumen = new JLabel("Volumen:");
 		lblVolumen.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblVolumen.setBounds(95, 279, 73, 14);
 		frame.getContentPane().add(lblVolumen);
@@ -155,12 +158,12 @@ public class GUIRadio {
 		
 		String[] canales = {"Canal 1","Canal 2","Canal 3","Canal 4","Canal 5","Canal 6","Canal 7","Canal 8","Canal 9","Canal 10","Canal 11","Canal 12",};
 		comboBox = new JComboBox (canales);
-		comboBox.setBounds(82, 218, 73, 20);
+		comboBox.setBounds(82, 218, 120, 20);
 		frame.getContentPane().add(comboBox);
 		comboBox.addActionListener(new botones());
 		
 		btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(183, 217, 85, 23);
+		btnGuardar.setBounds(195, 217, 85, 23);
 		frame.getContentPane().add(btnGuardar);
 		btnGuardar.addActionListener(new botones());
 		
@@ -176,8 +179,11 @@ public class GUIRadio {
 		rdbtnFm = new JRadioButton("FM");
 		rdbtnFm.setBounds(375, 375, 86, 23);
 		frame.getContentPane().add(rdbtnFm);
+		rdbtnFm.setSelected(true);
 		
-		
+		amfm = new ButtonGroup();
+		amfm.add(rdbtnAm);
+		amfm.add(rdbtnFm);
 		
 		btnRegresar = new JButton("<<");
 		btnRegresar.setBounds(136, 80, 89, 23);
@@ -207,22 +213,57 @@ public class GUIRadio {
 		public void actionPerformed(ActionEvent evento) {
 			if (btnAvanzar == evento.getSource()){
 				lblSintoniza.setText(String.valueOf(radio.adelantarEmisora()));
-				
 			}
 			if (btnRegresar == evento.getSource()){
 				lblSintoniza.setText(String.valueOf(radio.retrocederEmisora()));
-				
 			}
 			if (btnSubirVolumen == evento.getSource()){
-				
+				lblVolumen.setText(String.valueOf(radio.subirVolumen()));
 			}
 			if (btnBajarVolumen == evento.getSource()){
-				
+				lblVolumen.setText(String.valueOf(radio.bajarVolumen()));
 			}
 			
-			
+			if(btnGuardar == evento.getSource()){
+				radio.guardarEmisora(Double.parseDouble(lblSintoniza.getText()), comboBox.getSelectedIndex());
+			}
+
+			if(btnCanal1 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(1)));
+			}
+			if(btnCanal2 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(2)));
+			}
+			if(btnCanal3 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(3)));
+			}
+			if(btnCanal4 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(4)));
+			}
+			if(btnCanal5 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(5)));
+			}
+			if(btnCanal6 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(6)));
+			}
+			if(btnCanal7 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(7)));
+			}
+			if(btnCanal8 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(8)));
+			}
+			if(btnCanal9 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(9)));
+			}
+			if(btnCanal10 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(10)));
+			}
+			if(btnCanal11 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(11)));
+			}
+			if(btnCanal12 == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(12)));
+			}
 		}
-		
-		
 	}	
 }

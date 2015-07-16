@@ -10,7 +10,7 @@ public class radioBBP implements radio {
 
 	
 	private int volumenActual = 0;
-	private double emisoraActual = 87.5;
+	private double emisoraActual = 87.9;
 	private String frecuenciaActual = "FM";
 	private boolean estadoActual = false;
 	private double[] ams = new double[12];
@@ -55,9 +55,9 @@ public class radioBBP implements radio {
 	public double cargarEmisora(int posicion) {
 		// TODO Auto-generated method stub
 		if(frecuenciaActual=="FM"){
-			return fms[posicion];
+			return fms[posicion-1];
 		} else {
-			return ams[posicion];
+			return ams[posicion-1];
 		}
 	}
 
@@ -68,16 +68,16 @@ public class radioBBP implements radio {
 	public double adelantarEmisora() {
 		// TODO Auto-generated method stub
 		if(frecuenciaActual=="FM"){
-			if(emisoraActual!=107.9){
+			if(emisoraActual<107.9){
 				emisoraActual = emisoraActual + 0.2;
 			}
 		} else {
-			if(emisoraActual!=1610){
+			if(emisoraActual<1610){
 				emisoraActual = emisoraActual + 10;
 			}
 		}
 		
-		return emisoraActual;
+		return (double)Math.round(emisoraActual * 10) / 10;
 	}
 
 	/* (non-Javadoc)
@@ -87,16 +87,16 @@ public class radioBBP implements radio {
 	public double retrocederEmisora() {
 		// TODO Auto-generated method stub
 		if(frecuenciaActual=="FM"){
-			if(emisoraActual!=87.9){
+			if(emisoraActual>87.9){
 				emisoraActual = emisoraActual - 0.2;
 			}
 		} else {
-			if(emisoraActual!=530){
+			if(emisoraActual>530){
 				emisoraActual = emisoraActual - 10;
 			}
 		}
 		
-		return emisoraActual;
+		return (double)Math.round(emisoraActual * 10) / 10;
 	}
 
 	/* (non-Javadoc)
