@@ -115,6 +115,36 @@ public class GUIRadio {
 		frame.getContentPane().add(btnCanal6);
 		btnCanal6.addActionListener(new botones());
 		
+		btnCanal7 = new JButton("Canal 7");
+		btnCanal7.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnCanal7.setBounds(10, 161, 73, 23);
+		frame.getContentPane().add(btnCanal7);
+		btnCanal7.addActionListener(new botones());
+		
+		btnCanal8 = new JButton("Canal 8");
+		btnCanal8.setBounds(92, 161, 79, 23);
+		frame.getContentPane().add(btnCanal8);
+		btnCanal8.addActionListener(new botones());
+		
+		btnCanal9 = new JButton("Canal 9");
+		btnCanal9.setBounds(183, 160, 79, 23);
+		frame.getContentPane().add(btnCanal9);
+		btnCanal9.addActionListener(new botones());
+		
+		btnCanal10 = new JButton("Canal 10");
+		btnCanal10.setBounds(272, 159, 79, 23);
+		frame.getContentPane().add(btnCanal10);
+		btnCanal10.addActionListener(new botones());
+
+		btnCanal11 = new JButton("Canal 11");
+		btnCanal11.setBounds(361, 161, 86, 23);
+		frame.getContentPane().add(btnCanal11);
+		btnCanal11.addActionListener(new botones());
+		
+		btnCanal12 = new JButton("Canal 12");
+		btnCanal12.setBounds(461, 159, 86, 23);
+		frame.getContentPane().add(btnCanal12);
+		btnCanal12.addActionListener(new botones());		
 		JLabel lblCanales = new JLabel("Canales:");
 		lblCanales.setBounds(10, 221, 62, 14);
 		frame.getContentPane().add(lblCanales);
@@ -143,48 +173,29 @@ public class GUIRadio {
 		rdbtnFm.setBounds(375, 375, 86, 23);
 		frame.getContentPane().add(rdbtnFm);
 		
-		btnCanal7 = new JButton("Canal 7");
-		btnCanal7.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnCanal7.setBounds(10, 161, 73, 23);
-		frame.getContentPane().add(btnCanal7);
 		
-		btnCanal8 = new JButton("Canal 8");
-		btnCanal8.setBounds(92, 161, 79, 23);
-		frame.getContentPane().add(btnCanal8);
-		
-		btnCanal9 = new JButton("Canal 9");
-		btnCanal9.setBounds(183, 160, 79, 23);
-		frame.getContentPane().add(btnCanal9);
-		
-		btnCanal10 = new JButton("Canal 10");
-		btnCanal10.setBounds(272, 159, 79, 23);
-		frame.getContentPane().add(btnCanal10);
-		
-		btnCanal11 = new JButton("Canal 11");
-		btnCanal11.setBounds(361, 161, 86, 23);
-		frame.getContentPane().add(btnCanal11);
-		
-		btnCanal12 = new JButton("Canal 12");
-		btnCanal12.setBounds(461, 159, 86, 23);
-		frame.getContentPane().add(btnCanal12);
 		
 		btnRegresar = new JButton("<<");
 		btnRegresar.setBounds(136, 80, 89, 23);
 		frame.getContentPane().add(btnRegresar);
+		btnRegresar.addActionListener(new botones());
 		
 		btnAvanzar = new JButton(">>");
 		btnAvanzar.setBounds(286, 80, 89, 23);
 		frame.getContentPane().add(btnAvanzar);
+		btnAvanzar.addActionListener(new botones());
 		
 		btnSubirVolumen = new JButton("+");
 		btnSubirVolumen.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnSubirVolumen.setBounds(36, 318, 79, 45);
 		frame.getContentPane().add(btnSubirVolumen);
+		btnSubirVolumen.addActionListener(new botones());
 		
 		btnBajarVolumen = new JButton("-");
 		btnBajarVolumen.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnBajarVolumen.setBounds(146, 318, 79, 45);
 		frame.getContentPane().add(btnBajarVolumen);
+		btnBajarVolumen.addActionListener(new botones());
 	}
 	
 	public class botones implements ActionListener{
