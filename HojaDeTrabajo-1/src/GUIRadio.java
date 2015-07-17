@@ -33,6 +33,7 @@ public class GUIRadio {
 	private radioBBP radio;
 	private JLabel lblVolumen;
 	private ButtonGroup amfm;
+	private JLabel lblVol;
 
 	/**
 	 * Launch the application.
@@ -83,12 +84,13 @@ public class GUIRadio {
 		frame.getContentPane().add(lblEstacin);
 		
 		lblSintoniza = new JLabel("");
+		lblSintoniza.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblSintoniza.setBounds(183, 47, 171, 33);
 		frame.getContentPane().add(lblSintoniza);
 		
 		lblVolumen = new JLabel("Volumen:");
 		lblVolumen.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblVolumen.setBounds(95, 279, 73, 14);
+		lblVolumen.setBounds(42, 278, 73, 14);
 		frame.getContentPane().add(lblVolumen);
 		
 		btnCanal1 = new JButton("Canal 1");
@@ -163,7 +165,7 @@ public class GUIRadio {
 		comboBox.addActionListener(new botones());
 		
 		btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(195, 217, 85, 23);
+		btnGuardar.setBounds(224, 217, 85, 23);
 		frame.getContentPane().add(btnGuardar);
 		btnGuardar.addActionListener(new botones());
 		
@@ -205,12 +207,20 @@ public class GUIRadio {
 		btnBajarVolumen.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnBajarVolumen.setBounds(146, 318, 79, 45);
 		frame.getContentPane().add(btnBajarVolumen);
+		
+		lblVol = new JLabel("");
+		lblVol.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblVol.setBounds(140, 279, 73, 14);
+		frame.getContentPane().add(lblVol);
 		btnBajarVolumen.addActionListener(new botones());
 	}
 	
 	public class botones implements ActionListener{
 
 		public void actionPerformed(ActionEvent evento) {
+			if (btnEncendidoapagado == evento.getSource()){
+				
+			}
 			if (btnAvanzar == evento.getSource()){
 				lblSintoniza.setText(String.valueOf(radio.adelantarEmisora()));
 			}
@@ -218,10 +228,10 @@ public class GUIRadio {
 				lblSintoniza.setText(String.valueOf(radio.retrocederEmisora()));
 			}
 			if (btnSubirVolumen == evento.getSource()){
-				lblVolumen.setText(String.valueOf(radio.subirVolumen()));
+				lblVol.setText(String.valueOf(radio.subirVolumen()));
 			}
 			if (btnBajarVolumen == evento.getSource()){
-				lblVolumen.setText(String.valueOf(radio.bajarVolumen()));
+				lblVol.setText(String.valueOf(radio.bajarVolumen()));
 			}
 			
 			if(btnGuardar == evento.getSource()){
@@ -263,6 +273,13 @@ public class GUIRadio {
 			}
 			if(btnCanal12 == evento.getSource()){
 				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(12)));
+			}
+			//Agregar lógica AM / FM
+			if (rdbtnFm == evento.getSource()){
+				
+			}
+			if (rdbtnAm == evento.getSource()){
+				lblSintoniza.setText(String.valueOf(radio.adelantarEmisora()));
 			}
 		}
 	}	
