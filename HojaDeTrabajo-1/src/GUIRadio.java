@@ -16,8 +16,15 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 
+/**
+ * @author  Boggdan Barrientos, Bryan Chan, Pablo Arriola
+ *
+ */
 public class GUIRadio {
 
+	/**
+	 * Son los atributos que voy a utilizar para crear mi interfaz grafica
+	 */
 	private JFrame frame;
 	private JRadioButton rdbtnFm, rdbtnAm;
 	private JButton btnGuardar;
@@ -62,8 +69,11 @@ public class GUIRadio {
 
 	/**
 	 * Initialize the contents of the frame.
-	 * @param manejoVolumen 
+	 * Me va a inicializar todos los elementos de la interfaz. Se inicializa y se agrega al Jframe por ser tantos botones esto es
+	 * bastante repetitivo
 	 */
+	
+	
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 573, 479);
@@ -157,6 +167,10 @@ public class GUIRadio {
 		lblCanales.setBounds(10, 221, 62, 14);
 		frame.getContentPane().add(lblCanales);
 		
+		/**
+		 *este va a ser mi combobox para todos los botones del arreglo de 12 
+		 */
+		
 		String[] canales = {"Canal 1","Canal 2","Canal 3","Canal 4","Canal 5","Canal 6","Canal 7","Canal 8","Canal 9","Canal 10","Canal 11","Canal 12",};
 		comboBox = new JComboBox (canales);
 		comboBox.setBounds(82, 218, 120, 20);
@@ -178,6 +192,10 @@ public class GUIRadio {
 		frame.getContentPane().add(rdbtnAm);
 		rdbtnAm.addActionListener(new ActionListener(){
 
+			/* 
+			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+			 * es mi listener de para cuando se cambia de frecuencia
+			 */
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -193,6 +211,10 @@ public class GUIRadio {
 		rdbtnFm.setSelected(true);
 		rdbtnFm.addActionListener(new ActionListener(){
 
+			/* 
+			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+			 * mi listener de cuando se cambia de frecuencia
+			 */
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -234,6 +256,11 @@ public class GUIRadio {
 		btnBajarVolumen.addActionListener(new botones());
 	}
 	
+	/**
+	 * Es el listener para los botones primero se ponen todos los botones en false si uno de estos es presionado va a cambiar a true y 
+	 * se va a ir al if dependiendo el boton esa va a ser la accion que se va a hacer
+	 *
+	 */
 	public class botones implements ActionListener{
 
 		public void actionPerformed(ActionEvent evento) {

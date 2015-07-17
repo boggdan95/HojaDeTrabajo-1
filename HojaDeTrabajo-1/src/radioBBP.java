@@ -1,6 +1,3 @@
-/**
- * 
- */
 
 /**
  * @author Boggdan Barrientos, Bryan Chan, Pablo Arriola
@@ -18,8 +15,9 @@ public class radioBBP implements radio {
 	
 	
 	
-	/* (non-Javadoc)
+	/* 
 	 * @see radio#encenderApagar()
+	 * este va a ser el metodo que se va a utlizar para encender la radio si esta prendida se apaga si esta apagada se enciende
 	 */
 	@Override
 	public boolean encenderApagar() {
@@ -33,8 +31,9 @@ public class radioBBP implements radio {
 		return estadoActual;
 	}
 
-	/* (non-Javadoc)
+	/* 
 	 * @see radio#cambiarFrecuencia()
+	 * va a ser mi metodo para cambiar de frecuencia si es esta en am va a pasar a fm. Cada una tiene su frecuencia inicial que se acordo en clase
 	 */
 	@Override
 	public String cambiarFrecuencia() {
@@ -50,8 +49,9 @@ public class radioBBP implements radio {
 		return frecuenciaActual;
 	}
 
-	/* (non-Javadoc)
+	/* 
 	 * @see radio#cambiarEmisora()
+	 * este me va a servir para cambiar de emisora, seleccionando un boton
 	 */
 	@Override
 	public double cargarEmisora(int posicion) {
@@ -63,8 +63,9 @@ public class radioBBP implements radio {
 		}
 	}
 
-	/* (non-Javadoc)
+	/* 
 	 * @see radio#adelantarEmisora()
+	 * este es mi metodo para adelantar de la emisora se le va a sumar a la emisora actual una constante dependiendo de si es am o fm
 	 */
 	@Override
 	public double adelantarEmisora() {
@@ -82,8 +83,9 @@ public class radioBBP implements radio {
 		return (double)Math.round(emisoraActual * 10) / 10;
 	}
 
-	/* (non-Javadoc)
+	/* 
 	 * @see radio#retrocederEmisora()
+	 * es el mismo que para adelantar la emisora pero ahora se resta en vez de sumar
 	 */
 	@Override
 	public double retrocederEmisora() {
@@ -101,8 +103,9 @@ public class radioBBP implements radio {
 		return (double)Math.round(emisoraActual * 10) / 10;
 	}
 
-	/* (non-Javadoc)
+	/* 
 	 * @see radio#guardarEmisora()
+	 * sirve para guardar la estacion actual en una emisora
 	 */
 	@Override
 	public double guardarEmisora(double emisora, int posicion) {
@@ -116,8 +119,9 @@ public class radioBBP implements radio {
 		return emisora;
 	}
 
-	/* (non-Javadoc)
+	/* 
 	 * @see radio#subirVolumen()
+	 * sirve para subir de volumen no puede pasar de 100
 	 */
 	@Override
 	public int subirVolumen() {
@@ -128,8 +132,9 @@ public class radioBBP implements radio {
 		return volumenActual;
 	}
 
-	/* (non-Javadoc)
+	/* 
 	 * @see radio#bajarVolumen()
+	 * sirve para bajar de volumen y el minimo es 0
 	 */
 	@Override
 	public int bajarVolumen() {
