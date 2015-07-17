@@ -217,34 +217,27 @@ public class GUIRadio {
 	
 	public class botones implements ActionListener{
 
-		private boolean status;
 		public void actionPerformed(ActionEvent evento) {
 			if (btnEncendidoapagado == evento.getSource()){
-					btnCanal6.setEnabled(false);
-					btnCanal5.setEnabled(false);
-					btnCanal4.setEnabled(false);
-					btnCanal3.setEnabled(false);
-					btnCanal1.setEnabled(false);
-					btnCanal2.setEnabled(false);
-					btnCanal7.setEnabled(false);
-					btnCanal8.setEnabled(false);
-					btnCanal9 .setEnabled(false);
-					btnCanal10.setEnabled(false);
-					btnCanal11.setEnabled(false);
-					btnCanal12.setEnabled(false);
+				boolean status = radio.encenderApagar();
+					btnCanal6.setEnabled(status);
+					btnCanal5.setEnabled(status);
+					btnCanal4.setEnabled(status);
+					btnCanal3.setEnabled(status);
+					btnCanal1.setEnabled(status);
+					btnCanal2.setEnabled(status);
+					btnCanal7.setEnabled(status);
+					btnCanal8.setEnabled(status);
+					btnCanal9 .setEnabled(status);
+					btnCanal10.setEnabled(status);
+					btnCanal11.setEnabled(status);
+					btnCanal12.setEnabled(status);
+					btnGuardar.setEnabled(status);
+					btnRegresar.setEnabled(status);
+					btnAvanzar.setEnabled(status);
+					btnSubirVolumen.setEnabled(status);
+					btnBajarVolumen.setEnabled(status);
 
-				/*	btnCanal6.setEnabled(true);
-					btnCanal5.setEnabled(true);
-					btnCanal4.setEnabled(true);
-					btnCanal3.setEnabled(true);
-					btnCanal1.setEnabled(true);
-					btnCanal2.setEnabled(true);
-					btnCanal7.setEnabled(true);
-					btnCanal8.setEnabled(true);
-					btnCanal9 .setEnabled(true);
-					btnCanal10.setEnabled(true);
-					btnCanal11.setEnabled(true);
-					btnCanal12.setEnabled(true); */
 				}
 				
 			if (btnAvanzar == evento.getSource()){
