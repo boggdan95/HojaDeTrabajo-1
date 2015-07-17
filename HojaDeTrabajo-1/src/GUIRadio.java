@@ -15,11 +15,12 @@ import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.awt.SystemColor;
 
 
 public class GUIRadio {
 
-	private JFrame frame;
+	private JFrame frmRadioJava;
 	private JRadioButton rdbtnFm, rdbtnAm;
 	private JButton btnGuardar;
 	private JComboBox<String> comboBox;
@@ -43,7 +44,7 @@ public class GUIRadio {
 			public void run() {
 				try {
 					GUIRadio window = new GUIRadio();
-					window.frame.setVisible(true);
+					window.frmRadioJava.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -66,117 +67,119 @@ public class GUIRadio {
 	 * @param manejoVolumen 
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 573, 479);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmRadioJava = new JFrame();
+		frmRadioJava.setTitle("Radio JAVA");
+		frmRadioJava.setBounds(100, 100, 573, 479);
+		frmRadioJava.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmRadioJava.getContentPane().setLayout(null);
 		
 		btnEncendidoapagado = new JButton("Encender/Apagar");
+		btnEncendidoapagado.setForeground(SystemColor.textHighlight);
 		btnEncendidoapagado.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnEncendidoapagado.setBounds(196, 13, 162, 23);
-		frame.getContentPane().add(btnEncendidoapagado);
+		frmRadioJava.getContentPane().add(btnEncendidoapagado);
 		btnEncendidoapagado.addActionListener(new botones());
 		
 		JLabel lblEstacin = new JLabel("Estaci\u00F3n:");
 		lblEstacin.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblEstacin.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEstacin.setBounds(26, 47, 105, 33);
-		frame.getContentPane().add(lblEstacin);
+		frmRadioJava.getContentPane().add(lblEstacin);
 		
 		lblSintoniza = new JLabel("");
 		lblSintoniza.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblSintoniza.setBounds(183, 47, 171, 33);
-		frame.getContentPane().add(lblSintoniza);
+		frmRadioJava.getContentPane().add(lblSintoniza);
 		
 		lblVolumen = new JLabel("Volumen:");
 		lblVolumen.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblVolumen.setBounds(42, 278, 73, 14);
-		frame.getContentPane().add(lblVolumen);
+		frmRadioJava.getContentPane().add(lblVolumen);
 		
 		btnCanal1 = new JButton("Canal 1");
 		btnCanal1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnCanal1.setBounds(10, 126, 73, 23);
-		frame.getContentPane().add(btnCanal1);
+		frmRadioJava.getContentPane().add(btnCanal1);
 		btnCanal1.addActionListener(new botones());
 		
 		btnCanal2 = new JButton("Canal 2");
 		btnCanal2.setBounds(89, 127, 79, 23);
-		frame.getContentPane().add(btnCanal2);
+		frmRadioJava.getContentPane().add(btnCanal2);
 		btnCanal2.addActionListener(new botones());
 		
 		btnCanal3 = new JButton("Canal 3");
 		btnCanal3.setBounds(183, 126, 79, 23);
-		frame.getContentPane().add(btnCanal3);
+		frmRadioJava.getContentPane().add(btnCanal3);
 		btnCanal3.addActionListener(new botones());
 		
 		btnCanal4 = new JButton("Canal 4");
 		btnCanal4.setBounds(272, 125, 79, 23);
-		frame.getContentPane().add(btnCanal4);
+		frmRadioJava.getContentPane().add(btnCanal4);
 		btnCanal4.addActionListener(new botones());
 		
 		btnCanal5 = new JButton("Canal 5");
 		btnCanal5.setBounds(361, 125, 86, 23);
-		frame.getContentPane().add(btnCanal5);
+		frmRadioJava.getContentPane().add(btnCanal5);
 		btnCanal5.addActionListener(new botones());
 		
 		btnCanal6 = new JButton("Canal 6");
 		btnCanal6.setBounds(461, 125, 86, 23);
-		frame.getContentPane().add(btnCanal6);
+		frmRadioJava.getContentPane().add(btnCanal6);
 		btnCanal6.addActionListener(new botones());
 		
 		btnCanal7 = new JButton("Canal 7");
 		btnCanal7.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnCanal7.setBounds(10, 161, 73, 23);
-		frame.getContentPane().add(btnCanal7);
+		frmRadioJava.getContentPane().add(btnCanal7);
 		btnCanal7.addActionListener(new botones());
 		
 		btnCanal8 = new JButton("Canal 8");
 		btnCanal8.setBounds(92, 161, 79, 23);
-		frame.getContentPane().add(btnCanal8);
+		frmRadioJava.getContentPane().add(btnCanal8);
 		btnCanal8.addActionListener(new botones());
 		
 		btnCanal9 = new JButton("Canal 9");
 		btnCanal9.setBounds(183, 160, 79, 23);
-		frame.getContentPane().add(btnCanal9);
+		frmRadioJava.getContentPane().add(btnCanal9);
 		btnCanal9.addActionListener(new botones());
 		
 		btnCanal10 = new JButton("Canal 10");
 		btnCanal10.setBounds(272, 159, 79, 23);
-		frame.getContentPane().add(btnCanal10);
+		frmRadioJava.getContentPane().add(btnCanal10);
 		btnCanal10.addActionListener(new botones());
 
 		btnCanal11 = new JButton("Canal 11");
 		btnCanal11.setBounds(361, 161, 86, 23);
-		frame.getContentPane().add(btnCanal11);
+		frmRadioJava.getContentPane().add(btnCanal11);
 		btnCanal11.addActionListener(new botones());
 		
 		btnCanal12 = new JButton("Canal 12");
 		btnCanal12.setBounds(461, 159, 86, 23);
-		frame.getContentPane().add(btnCanal12);
+		frmRadioJava.getContentPane().add(btnCanal12);
 		btnCanal12.addActionListener(new botones());		
 		JLabel lblCanales = new JLabel("Canales:");
 		lblCanales.setBounds(10, 221, 62, 14);
-		frame.getContentPane().add(lblCanales);
+		frmRadioJava.getContentPane().add(lblCanales);
 		
 		String[] canales = {"Canal 1","Canal 2","Canal 3","Canal 4","Canal 5","Canal 6","Canal 7","Canal 8","Canal 9","Canal 10","Canal 11","Canal 12",};
 		comboBox = new JComboBox (canales);
 		comboBox.setBounds(82, 218, 120, 20);
-		frame.getContentPane().add(comboBox);
+		frmRadioJava.getContentPane().add(comboBox);
 		comboBox.addActionListener(new botones());
 		
 		btnGuardar = new JButton("Guardar");
 		btnGuardar.setBounds(224, 217, 85, 23);
-		frame.getContentPane().add(btnGuardar);
+		frmRadioJava.getContentPane().add(btnGuardar);
 		btnGuardar.addActionListener(new botones());
 		
 		JLabel lblFrencuencia = new JLabel("Frencuencia:");
 		lblFrencuencia.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblFrencuencia.setBounds(328, 349, 92, 14);
-		frame.getContentPane().add(lblFrencuencia);
+		lblFrencuencia.setBounds(309, 278, 92, 14);
+		frmRadioJava.getContentPane().add(lblFrencuencia);
 		
 		rdbtnAm = new JRadioButton("AM");
-		rdbtnAm.setBounds(309, 370, 56, 33);
-		frame.getContentPane().add(rdbtnAm);
+		rdbtnAm.setBounds(309, 318, 56, 33);
+		frmRadioJava.getContentPane().add(rdbtnAm);
 		rdbtnAm.addActionListener(new ActionListener(){
 
 			@Override
@@ -189,8 +192,8 @@ public class GUIRadio {
 		});
 		
 		rdbtnFm = new JRadioButton("FM");
-		rdbtnFm.setBounds(375, 375, 86, 23);
-		frame.getContentPane().add(rdbtnFm);
+		rdbtnFm.setBounds(361, 323, 86, 23);
+		frmRadioJava.getContentPane().add(rdbtnFm);
 		rdbtnFm.setSelected(true);
 		rdbtnFm.addActionListener(new ActionListener(){
 
@@ -209,29 +212,29 @@ public class GUIRadio {
 		
 		btnRegresar = new JButton("<<");
 		btnRegresar.setBounds(136, 80, 89, 23);
-		frame.getContentPane().add(btnRegresar);
+		frmRadioJava.getContentPane().add(btnRegresar);
 		btnRegresar.addActionListener(new botones());
 		
 		btnAvanzar = new JButton(">>");
 		btnAvanzar.setBounds(286, 80, 89, 23);
-		frame.getContentPane().add(btnAvanzar);
+		frmRadioJava.getContentPane().add(btnAvanzar);
 		btnAvanzar.addActionListener(new botones());
 		
 		btnSubirVolumen = new JButton("+");
 		btnSubirVolumen.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnSubirVolumen.setBounds(36, 318, 79, 45);
-		frame.getContentPane().add(btnSubirVolumen);
+		frmRadioJava.getContentPane().add(btnSubirVolumen);
 		btnSubirVolumen.addActionListener(new botones());
 		
 		btnBajarVolumen = new JButton("-");
 		btnBajarVolumen.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnBajarVolumen.setBounds(146, 318, 79, 45);
-		frame.getContentPane().add(btnBajarVolumen);
+		frmRadioJava.getContentPane().add(btnBajarVolumen);
 		
 		lblVol = new JLabel("0");
 		lblVol.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblVol.setBounds(140, 279, 73, 14);
-		frame.getContentPane().add(lblVol);
+		frmRadioJava.getContentPane().add(lblVol);
 		btnBajarVolumen.addActionListener(new botones());
 		
 		lblSintoniza.setText(String.valueOf(radio.adelantarEmisora()));
