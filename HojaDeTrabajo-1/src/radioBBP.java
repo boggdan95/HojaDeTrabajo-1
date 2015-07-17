@@ -41,8 +41,10 @@ public class radioBBP implements radio {
 		// TODO Auto-generated method stub
 		if(frecuenciaActual=="FM"){
 			frecuenciaActual = "AM";
+			emisoraActual = 530;
 		} else {
 			frecuenciaActual = "FM";
+			emisoraActual = 87.9;
 		}
 		
 		return frecuenciaActual;

@@ -4,7 +4,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Hashtable;
-
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -177,11 +176,31 @@ public class GUIRadio {
 		rdbtnAm = new JRadioButton("AM");
 		rdbtnAm.setBounds(309, 370, 56, 33);
 		frame.getContentPane().add(rdbtnAm);
+		rdbtnAm.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				radio.cambiarFrecuencia();
+				lblSintoniza.setText(String.valueOf(radio.adelantarEmisora()));
+			}
+			
+		});
 		
 		rdbtnFm = new JRadioButton("FM");
 		rdbtnFm.setBounds(375, 375, 86, 23);
 		frame.getContentPane().add(rdbtnFm);
 		rdbtnFm.setSelected(true);
+		rdbtnFm.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				radio.cambiarFrecuencia();
+				lblSintoniza.setText(String.valueOf(radio.adelantarEmisora()));
+			}
+			
+		});
 		
 		amfm = new ButtonGroup();
 		amfm.add(rdbtnAm);
@@ -217,36 +236,59 @@ public class GUIRadio {
 	
 	public class botones implements ActionListener{
 
-		private boolean status;
 		public void actionPerformed(ActionEvent evento) {
 			if (btnEncendidoapagado == evento.getSource()){
-					btnCanal6.setEnabled(false);
-					btnCanal5.setEnabled(false);
-					btnCanal4.setEnabled(false);
-					btnCanal3.setEnabled(false);
+				boolean estadoActual = radio.encenderApagar();
+				if(!estadoActual){
+					rdbtnFm.setEnabled(false);
+					rdbtnAm.setEnabled(false);
+					btnGuardar.setEnabled(false);
+					comboBox.setEnabled(false);
 					btnCanal1.setEnabled(false);
 					btnCanal2.setEnabled(false);
+					btnCanal3.setEnabled(false);
+					btnCanal4.setEnabled(false);
+					btnCanal5.setEnabled(false);
+					btnCanal6.setEnabled(false);
 					btnCanal7.setEnabled(false);
 					btnCanal8.setEnabled(false);
-					btnCanal9 .setEnabled(false);
+					btnCanal9.setEnabled(false);
 					btnCanal10.setEnabled(false);
 					btnCanal11.setEnabled(false);
 					btnCanal12.setEnabled(false);
-
-				/*	btnCanal6.setEnabled(true);
-					btnCanal5.setEnabled(true);
-					btnCanal4.setEnabled(true);
-					btnCanal3.setEnabled(true);
+					lblSintoniza.setEnabled(false);
+					btnRegresar.setEnabled(false);
+					btnAvanzar.setEnabled(false);
+					btnSubirVolumen.setEnabled(false);
+					btnBajarVolumen.setEnabled(false);
+					lblVolumen.setEnabled(false);
+					lblVol.setEnabled(false);
+				} else {
+					rdbtnFm.setEnabled(true);
+					rdbtnAm.setEnabled(true);
+					btnGuardar.setEnabled(true);
+					comboBox.setEnabled(true);
 					btnCanal1.setEnabled(true);
 					btnCanal2.setEnabled(true);
+					btnCanal3.setEnabled(true);
+					btnCanal4.setEnabled(true);
+					btnCanal5.setEnabled(true);
+					btnCanal6.setEnabled(true);
 					btnCanal7.setEnabled(true);
 					btnCanal8.setEnabled(true);
-					btnCanal9 .setEnabled(true);
+					btnCanal9.setEnabled(true);
 					btnCanal10.setEnabled(true);
 					btnCanal11.setEnabled(true);
-					btnCanal12.setEnabled(true); */
+					btnCanal12.setEnabled(true);
+					lblSintoniza.setEnabled(true);
+					btnRegresar.setEnabled(true);
+					btnAvanzar.setEnabled(true);
+					btnSubirVolumen.setEnabled(true);
+					btnBajarVolumen.setEnabled(true);
+					lblVolumen.setEnabled(true);
+					lblVol.setEnabled(true);
 				}
-				
+			}
 			if (btnAvanzar == evento.getSource()){
 				lblSintoniza.setText(String.valueOf(radio.adelantarEmisora()));
 			}
@@ -299,13 +341,6 @@ public class GUIRadio {
 			}
 			if(btnCanal12 == evento.getSource()){
 				lblSintoniza.setText(String.valueOf(radio.cargarEmisora(12)));
-			}
-			//Agregar lógica AM / FM
-			if (rdbtnFm == evento.getSource()){
-				
-			}
-			if (rdbtnAm == evento.getSource()){
-				lblSintoniza.setText(String.valueOf(radio.adelantarEmisora()));
 			}
 		}
 	}	
